@@ -1,2 +1,891 @@
-# myportfolio
-My portfolio
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shashank K | Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Timmana&display=swap');
+        
+        body {
+            font-family: "Timmana", sans-serif;
+            font-style: normal;
+            background-color: #fff;
+            color: #000;
+        }
+        
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+            transition: ease 0.3s;
+        }
+        
+        a:hover {
+            color: tan;
+            text-decoration: underline;
+            text-decoration-color: tan;
+            transition: ease 0.3s;
+            text-underline-offset: 10px;
+        }
+        
+        /* Header Styles */
+        #header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: #fff;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            
+    border-bottom: 2px solid orange;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            height: 100px;
+            padding: 0px 100px;
+            justify-content: space-between;
+        }
+        
+        .logo {
+            width: 500px;
+            font-size: 40px;
+            font-weight: 500;
+            color: tan;
+        }
+        
+        .menu-bar {
+            list-style: none;
+            display: flex;
+            width: 700px;
+            justify-content: space-around;
+            color: black;
+        }
+        
+        /* Hero Section */
+        .sec-1 {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            gap: 60px;
+            padding-top: 100px;
+        }
+        
+        .sec-1-1 {
+            margin-left: 100px;
+        }
+        
+        .sec-1-1 img {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid tan;
+        }
+        
+        .sec-1-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-right: 100px;
+        }
+        
+        .sec-1-2-1 {
+            font-weight: 600;
+            font-size: 24px;
+        }
+        
+        h1 {
+            font-size: 50px;
+            color: tan;
+        }
+        
+        .sec-1-2-3 {
+            font-weight: 600;
+            font-size: 22px;
+        }
+        
+        p {
+            font-size: 18px;
+            width: 90%;
+            line-height: 1.6;
+        }
+        
+        .btns > :nth-child(1) {
+            padding: 10px 20px;
+            background-color: transparent;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid black;
+        }
+        
+        .btns > :nth-child(1):hover {
+            background-color: black;
+            color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .btns {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .btns > :nth-child(2) {
+            padding: 10px 20px;
+            background-color: black;
+            color: white;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        
+        .btns > :nth-child(2):hover {
+            background-color: tan;
+            color: black;
+            border-color: tan;
+            transition: all 0.3s ease;
+        }
+        
+        .social img {
+            padding-top: 10px;
+            width: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .social {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .social img:hover {
+            transform: scale(0.9);
+        }
+        
+        /* About Section */
+        #about {
+            min-height: 100vh;
+            padding: 100px;
+            background-color: #f5f5f5;
+        }
+        
+        .about-content {
+            display: flex;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 400px;
+            height: 400px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 5px solid tan;
+        }
+        
+        .about-text h2 {
+            font-size: 40px;
+            color: tan;
+            margin-bottom: 20px;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        /* Skills Section */
+        #skill {
+            min-height: 100vh;
+            padding: 100px;
+        }
+        
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .skill-card {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .skill-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-icon {
+            font-size: 40px;
+            color: tan;
+            margin-bottom: 15px;
+        }
+        
+        .skill-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        
+        /* Projects Section */
+        #project {
+            min-height: 100vh;
+            padding: 100px;
+            background-color: #f5f5f5;
+        }
+        
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .project-card {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover .project-image img {
+            transform: scale(1.1);
+        }
+        
+        .project-info {
+            padding: 20px;
+        }
+        
+        .project-info h3 {
+            font-size: 22px;
+            color: tan;
+            margin-bottom: 10px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+        
+        .tag {
+            background: rgba(210, 180, 140, 0.2);
+            color: tan;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Coding Section */
+        #coding {
+            min-height: 100vh;
+            padding: 100px;
+        }
+        
+        .coding-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .coding-card {
+            background: #f5f5f5;
+            padding: 30px;
+            border-radius: 10px;
+            width: 250px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .coding-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .coding-icon {
+            font-size: 40px;
+            color: tan;
+            margin-bottom: 15px;
+        }
+        
+        /* Contact Section */
+        #contact {
+            min-height: 100vh;
+            padding: 100px;
+            background-color: #f5f5f5;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 60px;
+            margin-top: 50px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(210, 180, 140, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: tan;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: "Timmana", sans-serif;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        .submit-btn {
+            padding: 12px 30px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: tan;
+            color: black;
+        }
+        
+        /* Footer */
+        footer {
+            background: black;
+            color: white;
+            padding: 50px 100px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .footer-logo {
+            font-size: 40px;
+            color: tan;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: white;
+        }
+        
+        .footer-links a:hover {
+            color: tan;
+        }
+        
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-social a {
+            color: white;
+            font-size: 24px;
+        }
+        
+        .footer-social a:hover {
+            color: tan;
+            transform: scale(1.1);
+        }
+        
+        .copyright {
+            color: #aaa;
+        }
+        
+        /* Mobile Responsiveness */
+        @media (max-width: 1024px) {
+            .navbar {
+                display: none;
+            }
+            
+            .navbar-menu {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 80px;
+                padding: 0 30px;
+                width: 100%;
+            }
+            
+            .hamburger {
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+                position: fixed;
+                right: 30px;
+                top: 20px;
+                z-index: 1001;
+            }
+            
+            .hamburger i {
+                font-size: 35px;
+                padding: 4px;
+            }
+            
+            .navbar-menu .menu-bar {
+                display: flex;
+                flex-direction: column;
+                background-color: white;
+                position: fixed;
+                right: -300px;
+                top: 80px;
+                padding: 20px;
+                gap: 20px;
+                width: 250px;
+                height: calc(100vh - 80px);
+                transition: all 0.3s ease;
+                z-index: 1000;
+            }
+            
+            .navbar-menu .menu-bar.show {
+                right: 0;
+            }
+            
+            .sec-1 {
+                flex-direction: column;
+                height: auto;
+                padding: 150px 30px 50px;
+            }
+            
+            .sec-1-1 {
+                margin-left: 0;
+                margin-bottom: 50px;
+            }
+            
+            .sec-1-1 img {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .sec-1-2 {
+                padding-right: 0;
+                align-items: center;
+                text-align: center;
+            }
+            
+            p {
+                width: 100%;
+            }
+            
+            #about, #skill, #project, #coding, #contact {
+                padding: 80px 30px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image img {
+                width: 300px;
+                height: 300px;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            footer {
+                padding: 50px 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav class="navbar">
+            <div class="logo">Shashank K</div>
+            <ol class="menu-bar">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skill">Skills</a></li>
+                <li><a href="#project">Projects</a></li>
+                <li><a href="#coding">Coding</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ol>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section class="sec-1" id="home">
+        <div class="sec-1-1">
+            <img src="/a.html/assets/profile.jpg/WhatsApp Image 2025-06-13 at 11.50.49_9c0784ef.jpg">
+        </div>
+        <div class="sec-1-2">
+            <span class="sec-1-2-1">Hello, I'm</span>
+            <h1>Kandregula Shashank</h1>
+            <span class="sec-1-2-3">Front End Developer</span>
+            <p>Hello! I'm Shashank, a passionate Front-End Developer dedicated to crafting clean, responsive, and user-friendly websites. With a strong foundation in HTML, CSS, and JavaScript, I enjoy turning design concepts into real-world digital experiences. I'm currently expanding my skills in modern tools like Bootstrap and React, and I'm always eager to learn and grow in the field of web development.</p>
+            <div class="btns">
+                <a href="/a.html/assets/git.jng/Kandregula Satya Sai Shashank Mohith.docx" download="resume.docx">Download CV</a>
+                <button onclick="window.location.href='tel:+91 9542062696'">Contact</button>
+            </div>
+            <div class="social">
+                <a href="https://in.linkedin.com/in/shashank-k-1810a032a" target="_blank" ><img src="/a.html/assets/git.jng/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://github.com/shashankk2807" target="_blank"><img src="/a.html/assets/git.jng/github.png" alt="GitHub"></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="about-content">
+            <div class="about-text">
+                <h2>About Me</h2>
+                <p>I'm a Computer Science graduate with a passion for creating beautiful and functional web experiences. My journey in web development began during my university years, and I've been honing my skills ever since.</p>
+                <p>I specialize in front-end development but also have experience with back-end technologies. I believe in writing clean, maintainable code and creating intuitive user interfaces.</p>
+                <p>When I'm not coding, you can find me contributing to open-source projects, learning new technologies, or exploring the latest trends in web development.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skill">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-html5"></i>
+                </div>
+                <h3>HTML5</h3>
+                <p>Semantic markup, accessibility, and modern HTML5 features</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-css3-alt"></i>
+                </div>
+                <h3>CSS3</h3>
+                <p>Responsive design, animations, Flexbox, and Grid</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-js"></i>
+                </div>
+                <h3>JavaScript</h3>
+                <p>ES6+, DOM manipulation, and modern frameworks</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-java"></i>
+                </div>
+                <h3>Java</h3>
+                <p>Object-oriented programming and algorithms</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fab fa-python"></i>
+                </div>
+                <h3>Python</h3>
+                <p>Scripting, automation, and data analysis</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>MySQL</h3>
+                <p>Database design and SQL queries</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-terminal"></i>
+                </div>
+                <h3>UNIX</h3>
+                <p>Shell scripting and system administration</p>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <h3>UI/UX</h3>
+                <p>User interface design and user experience principles</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="project">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1769&q=80" alt="FarmMedic">
+                </div>
+                <div class="project-info">
+                    <h3>FarmMedic</h3>
+                    <p>A web application that helps farmers diagnose plant diseases and suggests organic treatments.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+            </div>
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1776&q=80" alt="Portfolio Website">
+                </div>
+                <div class="project-info">
+                    <h3>Portfolio Website</h3>
+                    <p>A responsive personal portfolio website showcasing my projects and skills.</p>
+                    <div class="project-tags">
+                        <span class="tag">HTML</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">JavaScript</span>
+                        
+                    </div>
+                </div>
+            </div>
+          
+        </div>
+    </section>
+
+    <!-- Coding Section -->
+    <section id="coding">
+        <h2>Coding Profiles</h2>
+        <div class="coding-container">
+            <div class="coding-card">
+                <div class="coding-icon">
+                    <i class="fab fa-github"></i>
+                </div>
+                <h3>GitHub</h3>
+                <p>Check out my open-source contributions and personal projects on GitHub.</p>
+                <a href=" https://github.com/shashankk2807" target="_blank" class="btn">Visit Profile</a>
+            </div>
+            <div class="coding-card">
+                <div class="coding-icon">
+                    <i class="fab fa-leetcode"></i>
+                </div>
+                <h3>LeetCode</h3>
+                <p>View my problem-solving skills and algorithm challenges on LeetCode.</p>
+                <a href="https://leetcode.com/u/shashankk28/" target="_blank" class="btn">Visit Profile</a>
+            </div>
+            <div class="coding-card">
+                <div class="coding-icon">
+                    <i class="fab fa-hackerrank"></i>
+                </div>
+                <h3>HackerEarth</h3>
+                <p>See my coding challenges and certifications on HackerRank.</p>
+                <a href="#" target="_blank" class="btn">Visit Profile</a>
+            </div>
+            <div class="coding-card">
+                <div class="coding-icon">
+                    <i class="fab fa-codechef"></i>
+                </div>
+                <h3>CodeChef</h3>
+                <p>View my problem-solving skills and algorithm challenges on CodeChef.</p>
+                <a href="https://www.codechef.com/users/shashankk28" target="_blank"  btn">Visit Profile</a>
+                </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Visakhapatnam, Andrapradesh, India</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <a href="mailto:kshashankmohith.28@gmail.com"><p>kshashankmohith.28@gmail.com</p></a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 9542062696</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" placeholder="Enter subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" placeholder="Enter your message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Shashank K</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skill">Skills</a>
+                <a href="#project">Projects</a>
+                <a href="#coding">Coding</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href=" https://in.linkedin.com/in/shashank-k-1810a032a" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/shashankk2807" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.instagram.com/k_shashank28/" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Shashank K. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector(".hamburger");
+        const menuBar = document.querySelector(".navbar-menu .menu-bar");
+        
+        hamburger.addEventListener("click", () => {
+            menuBar.classList.toggle("show");
+        });
+        
+        // Close menu when clicking on a link
+        const navLinks = document.querySelectorAll(".navbar-menu .menu-bar a");
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                menuBar.classList.remove("show");
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Sticky header on scroll
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            header.classList.toggle('sticky', window.scrollY > 0);
+        });
+    </script>
+</body>
+</html>
